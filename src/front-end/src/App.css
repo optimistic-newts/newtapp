@@ -1,0 +1,513 @@
+body {
+  margin: 50px 0 0;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  background-color: #282828;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.emoji {
+  display: inline;
+}
+
+.newtButton {
+  background-color: #992F05;
+  border: none;
+  color: white;
+  margin: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.newtButton:hover {
+  box-shadow: 0 0 5px black;
+}
+
+.newtButton:focus {
+  color: #992F05;
+  background-color: white;
+}
+
+/*noinspection CssUnusedSymbol*/
+.newtButtonDark {
+  background-color: #282828;
+  border: none;
+  color: white;
+  margin: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/*noinspection CssUnusedSymbol*/
+.newtButtonDark:hover {
+  box-shadow: 0 0 5px black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.newtButtonDark:focus {
+  background-color: black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.newtBigButton {
+  background-color: #992F05;
+  font-size: 20px;
+  border: none;
+  color: white;
+  margin: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/*noinspection CssUnusedSymbol*/
+.newtBigButton:hover {
+  box-shadow: 0 0 5px black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.newtBigButton:focus {
+  color: #992F05;
+  background-color: white;
+}
+
+.newtTextInput {
+  margin: 4px;
+  padding: 8px;
+  border: none;
+}
+
+.newtTextInput:hover {
+  box-shadow: 0 0 5px black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.formWarningText {
+  position: absolute;
+  width: 250px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  background-color: #992F05;
+  height: 50px;
+  width: 100%;
+
+}
+
+/*noinspection CssUnusedSymbol*/
+.leftNavLinks {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+/*noinspection CssUnusedSymbol*/
+.rightNavLinks {
+  position: absolute;
+  display: inline-flex;
+  top: 50%;
+  right: -7px;
+  transform: translateY(-50%);
+}
+
+/*noinspection CssUnusedSymbol*/
+.navLink {
+  margin: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #FFFFFF;
+  box-shadow: 0 0 2px black;
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.navLink:hover {
+  background-color: #FFFFFF;
+  color: #992F05;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+}
+
+/*noinspection CssUnusedSymbol*/
+.navLogo {
+  width: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30%;
+}
+
+/*noinspection CssUnusedSymbol*/
+.navUserPhoto {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  background-color: #FFFFFF;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.navUserPhoto:hover {
+  box-shadow: 0 0 5px black;
+}
+
+.mainContainer {
+  z-index: -1;
+  width: 100%;
+  max-width: 1000px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  min-height: 90%;
+}
+
+.loginMain {
+  margin: -50px 0 0;
+  height: 100vh;
+  background-image: url("./images/North_America_Nebula_HaRGB_V3_high_res.png");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loginSideDiv {
+  background-color: #992F05;
+  height: 400px;
+  width: 400px;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 0 25px black;
+}
+
+.loginSideContent {
+  position: absolute;
+  width: 75%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/*noinspection CssUnusedSymbol*/
+.loginSideChildren {
+
+}
+
+/*noinspection CssUnusedSymbol*/
+.loginLogo {
+  width: 40px;
+  height: 40px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.loginLink {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.loginLink:hover {
+  background-color: #FFFFFF;
+  color: #992F05;
+  cursor: pointer;
+  box-shadow: 0 0 5px black;
+}
+
+/* User Profile */
+
+.userProfileBanner {
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  background-color: #303030;
+  border-bottom: 2px solid #505050;
+}
+
+/*noinspection CssUnusedSymbol*/
+.userProfilePhotoContainer {
+  flex: none;
+  height: 75%;
+  margin: 0 25px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.userProfilePhoto {
+  border-radius: 50%;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.userProfileNameContainer {
+  flex: none;
+}
+
+.userProfileName {
+  font-size: 32px;
+}
+
+/*noinspection CssUnusedSymbol*/
+.userProfileFollowButton{
+  padding: 0 10px;
+  flex: none;
+}
+
+.userProfileContent {
+  height: 85%;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+/*noinspection CssUnusedSymbol*/
+.userProfileInfoPanel {
+  width: 30%;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  word-wrap: break-word;
+  line-height: 150%;
+}
+
+/*noinspection CssUnusedSymbol*/
+.userProfileInfo {
+  font-size: 18px;
+  width: 50%;
+  list-style-type: none;
+  margin-left: -10px;
+}
+
+.userProfileInterests {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  width: 90%;
+}
+
+/*noinspection CssUnusedSymbol*/
+.userProfileConversationsPanel {
+  width: 69%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+
+/* Conversation List */
+
+.conversationList {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.conversationTile {
+  position: relative;
+  background-color: #303030;
+  border: 1px solid #505050;
+  width: 90%;
+  min-height: 125px;
+  margin: 7px 0;
+  padding: 5px;
+  height: max-content;
+  /*box-shadow: -2px 2px 5px black;*/
+}
+
+.conversationTileTitleBox {
+  position: relative;
+  margin-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 45px;
+  align-items: center;
+  top: -5px;
+  left: 0;
+  max-width: 75%;
+  word-wrap: anywhere;
+}
+
+.conversationTileTitle {
+  font-size: 32px;
+  height: content-box;
+  display: inline;
+}
+
+.conversationTileTopics{
+  position: absolute;
+  bottom: 0;
+  margin-left: 30px;
+  margin-bottom: 15px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 60%;
+}
+
+.conversationTileTopic {
+  margin: 0 5px;
+  background-color: #992F05;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.conversationTileSidebar {
+  position: absolute;
+  right: 20px;
+  width: 20%;
+  min-width: 175px;
+  height: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+.conversationTileButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.conversationTileSidebarExtra {
+  margin: 8px 5px;
+}
+
+/* Create conversation form */
+
+.createConversationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: relative;
+  margin-top: 10px;
+  height: 350px;
+  width: 400px;
+  background-color: #303030;
+  padding: 10px;
+}
+
+.createConversationPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createConversationTextInput {
+  margin: 4px;
+  padding: 12px;
+  border: none;
+  font-size: 16px;
+}
+
+.createConversationTextInput:hover {
+  box-shadow: 0 0 5px black;
+}
+
+/* Messenger */
+
+.messenger {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+/*noinspection CssUnusedSymbol*/
+.messengerBanner {
+  display: flex;
+  justify-content: center;
+  height: 160px;
+}
+
+.messageList {
+  overflow-y: scroll;
+  height: calc(100% - 60px - 150px);
+  border: 1px solid #505050;
+}
+
+.message {
+  margin: 5px;
+  background-color: #303030;
+  border: 1px solid #505050;
+}
+
+/*noinspection CssUnusedSymbol*/
+.messageInfo {
+  position: relative;
+  width: 100%;
+}
+
+/*noinspection CssUnusedSymbol*/
+.messageAuthor {
+  margin: 5px;
+  background-color: #282828;
+  border-radius: 5px;
+  padding: 0 5px;
+  width: fit-content;
+}
+
+.messageTime {
+  position: absolute;
+  font-size: 11px;
+  color: #BBBBBB;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 5px;
+}
+
+.messageBody {
+  margin: 5px;
+  padding: 2px;
+}
+
+.createMessageForm {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  width : 100%;
+  height: 60px;
+}
+
+.messageInput {
+  resize: none;
+  flex: 1;
+  height: 50px;
+}
