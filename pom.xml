@@ -15,7 +15,7 @@
     <description>newtapp</description>
     <properties>
         <java.version>11</java.version>
-        <exec.mainClass>com.newts.newtapp.api.NewtappApplication</exec.mainClass>
+        <exec.mainClass>com.newts.newtapp.api.Newtapp</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>
@@ -80,6 +80,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
             <version>5.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.12</version>
         </dependency>
     </dependencies>
 

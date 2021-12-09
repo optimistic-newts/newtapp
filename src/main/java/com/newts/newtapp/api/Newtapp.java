@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
 @EntityScan("com.newts.newtapp.entities")
-public class NewtappApplication {
+public class Newtapp {
 
     public static void main(String[] args) {
-        SpringApplication.run(NewtappApplication.class, args);
+        SpringApplication.run(Newtapp.class, args);
     }
 }
