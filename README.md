@@ -68,4 +68,6 @@ CREATE TABLE messages (
 3. `npm ci` to install dependencies (don't be alarmed by the warnings, they only concern the dev environment, you can confirm this with `npm audit -production`).
 4. `npm start` to run the web server.
 
+## Old Course Project Repository 
 
+[Old Repo](https://github.com/CSC207-UofT/course-project-newtapp)
