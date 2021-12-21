@@ -9,11 +9,15 @@ In Newt, logged-in users are able to create and join Conversations. Conversation
 [Setup Walkthrough Video](https://www.youtube.com/watch?v=0o1EFIUH57c)
 
 1. Set up PostgreSQL on your machine.
-2. Create a new database called `newtapp`.
-3. Create `users`, `conversations` and `messages` tables in the database (see SQL commands below).
+2. Create a user called `optimisticnewt` with password `newtdb`.
+3. Create a new database called `newtapp`.
+4. Create `users`, `conversations` and `messages` tables in the database.
+5. Grant privileges to user `optimisticnewt` for these tables and their sequences.
 
 You can complete steps 2 and 3 by running the following in `psql`:
 ```
+CREATE USER optimisticnewt WITH PASSWORD 'newtdb';
+
 CREATE DATABASE newtapp;
 
 \c newtapp
@@ -56,6 +60,14 @@ CREATE TABLE messages (
     last_updated_at text,
     conversation_id int
 );
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON ALL TABLES IN SCHEMA public 
+TO optimisticnewt;
+
+GRANT USAGE, SELECT 
+ON ALL SEQUENCES IN SCHEMA public 
+TO optimisticnewt;
 ```
 
 ## Start up the Back-end API Server
