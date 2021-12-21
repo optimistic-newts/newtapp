@@ -4,12 +4,12 @@ import authUtil from "./auth";
 const newtApi = {
 
     async getUser(username) {
-        const response = await fetch(`http://localhost:8080/api/users/${username}`)
+        const response = await fetch(`/api/users/${username}`)
         return await response.json()
     },
 
      async createUser(formData) {
-         const response = await fetch('http://localhost:8080/api/users',
+         const response = await fetch('/api/users',
              {
                  method: 'POST',
                  headers: {
@@ -28,7 +28,7 @@ const newtApi = {
      },
 
      async login(username, password) {
-        const response = await fetch('http://localhost:8080/api/login',
+        const response = await fetch('/api/login',
             {
                 method: 'POST',
                 headers: {
@@ -45,7 +45,7 @@ const newtApi = {
 
     async follow(cookies, username) {
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch(`http://localhost:8080/api/users/${username}/follow`,
+        const response = await fetch(`/api/users/${username}/follow`,
             {
                 method: 'POST',
                 headers: {
@@ -62,7 +62,7 @@ const newtApi = {
 
      async getRelevantConversations(cookies) {
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch('http://localhost:8080/api/relevant/conversations',
+        const response = await fetch('/api/relevant/conversations',
             {
                 method: 'GET',
                 headers: {
@@ -80,7 +80,7 @@ const newtApi = {
 
     async getRelevantConversationsByFollow(cookies) {
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch('http://localhost:8080/api/following/conversations',
+        const response = await fetch('/api/following/conversations',
             {
                 method: 'GET',
                 headers: {
@@ -99,7 +99,7 @@ const newtApi = {
     async getMyConversationsList(cookies) {
         const bearerToken = "Bearer " + cookies.Auth;
         const username = authUtil.getUsername(cookies.Auth)
-        const response = await fetch(`http://localhost:8080/api/users/${username}/conversations`,
+        const response = await fetch(`/api/users/${username}/conversations`,
             {
                 method: 'GET',
                 headers: {
@@ -117,7 +117,7 @@ const newtApi = {
 
     async createConversation(cookies, formData) {
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch('http://localhost:8080/api/conversations',
+        const response = await fetch('/api/conversations',
             {
                 method: 'POST',
                 headers: {
@@ -136,7 +136,7 @@ const newtApi = {
 
     async createMessage(cookies, id, messageBody) {
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch(`http://localhost:8080/api/conversations/${id}/messages`,
+        const response = await fetch(`/api/conversations/${id}/messages`,
             {
                 method: 'POST',
                 headers: {
@@ -153,7 +153,7 @@ const newtApi = {
 
     async getConversationData(cookies, id){
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch(`http://localhost:8080/api/conversations/${id}/view`,
+        const response = await fetch(`/api/conversations/${id}/view`,
             {
                             method: 'GET',
                             headers: {
@@ -171,7 +171,7 @@ const newtApi = {
 
     async joinConversation(cookies, id){
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch(`http://localhost:8080/api/conversations/${id}/join`,
+        const response = await fetch(`/api/conversations/${id}/join`,
             {
                 method: 'POST',
                 headers: {
@@ -187,7 +187,7 @@ const newtApi = {
 
     async leaveConversation(cookies, id) {
         const bearerToken = "Bearer " + cookies.Auth;
-        const response = await fetch(`http://localhost:8080/api/conversations/${id}/leave`,
+        const response = await fetch(`/api/conversations/${id}/leave`,
             {
                 method: 'POST',
                 headers: {
