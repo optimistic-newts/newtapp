@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'newtapp',
-    script: './src/index.js'
+    script: './src/front-end/src/index.js'
   }],
   deploy: {
     production: {
