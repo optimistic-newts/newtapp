@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import newtApi from "../../api.js";
 import { instanceOf } from 'prop-types';
 import {withCookies, Cookies} from 'react-cookie';
+import FormWarning from "./createUserFormWarning";
 
 class CreateUserForm extends React.Component {
     static propTypes = {
@@ -11,7 +12,7 @@ class CreateUserForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {redirect: false, tryAgain: false, username: '', password: '', interests: ''};
+        this.state = {redirect: false, warning: '', username: '', password: '', confirmedPassword: '', interests: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -23,6 +24,10 @@ class CreateUserForm extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault();
+        if (this.state.password !== this.state.confirmedPassword) {
+            this.setState({warning: 'passwordMismatch'})
+            return null;
+        }
         const formData = {
             username: this.state.username,
             password: this.state.password,
@@ -31,7 +36,7 @@ class CreateUserForm extends React.Component {
         const newUser = await newtApi.createUser(formData);
 
         if (!newUser) {
-            this.setState({tryAgain: true});
+            this.setState({warning: 'badUser'});
         } else {
             this.setState({redirect: true});
         }
@@ -40,31 +45,20 @@ class CreateUserForm extends React.Component {
     render() {
         if (this.state.redirect) {
             return (<Navigate to="/login" replace={false} />)
-        } else if (this.state.tryAgain) {
-            return (
-                <form onSubmit={this.handleSubmit}>
-                    <input name="username" type="text" required="required" placeholder="Username"
-                           value={this.state.username} onChange={this.handleChange} className="newtTextInput"/> <br/>
-                    <input name="password" type="password" minLength="6" required="required" placeholder="Password"
-                           value={this.state.password} onChange={this.handleChange} className="newtTextInput"/> <br/>
-                    <input name="interests" type="text" required="required" placeholder="Something you're interested in"
-                           value={this.state.interests} onChange={this.handleChange} className="newtTextInput"/> <br/>
-                    <input type="submit" value="Create Account" className="newtButtonDark"/>
-                    <div className="formWarningText">
-                        <p>Username is in use already, sorry! Please try another!</p>
-                    </div>
-                </form>
-            );
         } else {
             return (
                 <form onSubmit={this.handleSubmit}>
-                    <input name="username" type="text" required="required" placeholder="Username"
+                    <input name="username" type="text" required="required" placeholder="Username" maxLength="30"
                            value={this.state.username} onChange={this.handleChange} className="newtTextInput"/> <br/>
                     <input name="password" type="password" minLength="6" required="required" placeholder="Password"
                            value={this.state.password} onChange={this.handleChange} className="newtTextInput"/> <br/>
+                    <input name="confirmedPassword" type="password" minLength="6" required="required"
+                           placeholder="Confirm Password" value={this.state.confirmedPassword}
+                           onChange={this.handleChange} className="newtTextInput"/> <br/>
                     <input name="interests" type="text" required="required" placeholder="Something you're interested in"
                            value={this.state.interests} onChange={this.handleChange} className="newtTextInput"/> <br/>
                     <input type="submit" value="Create Account" className="newtButtonDark"/>
+                    <FormWarning warning={this.state.warning} />
                 </form>
             );
         }

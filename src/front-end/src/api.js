@@ -1,4 +1,4 @@
-// Singleton to simplify API interface for use in front end JS
+// API interface for simplified use in front end JS
 import authUtil from "./auth";
 
 const newtApi = {
@@ -73,9 +73,7 @@ const newtApi = {
          if (response.status !== 200) {
              return false;
          }
-         const body = await response.json();
-         console.log(body);
-         return body;
+         return await response.json();
      },
 
     async getRelevantConversationsByFollow(cookies) {
@@ -91,9 +89,7 @@ const newtApi = {
         if (response.status !== 200) {
             return false;
         }
-        const body = await response.json();
-        console.log(body);
-        return body;
+        return await response.json();
     },
 
     async getMyConversationsList(cookies) {
@@ -110,9 +106,7 @@ const newtApi = {
         if (response.status !== 200) {
             return false;
         }
-        const body = await response.json();
-        console.log(body);
-        return body;
+        return await response.json();
     },
 
     async createConversation(cookies, formData) {
@@ -129,9 +123,7 @@ const newtApi = {
         if (response.status !== 201) {
             return false;
         }
-        const body = await response.json();
-        console.log(body);
-        return body;
+        return await response.json();
     },
 
     async createMessage(cookies, id, messageBody) {
@@ -164,9 +156,7 @@ const newtApi = {
             if (response.status !== 200) {
                 return {};
             }
-        const body = await response.json();
-        console.log(body);
-        return body;
+        return await response.json();
     },
 
     async joinConversation(cookies, id){
