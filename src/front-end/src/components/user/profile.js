@@ -42,8 +42,6 @@ function Profile({ userData }) {
             <div className="userProfileContent">
                 <div className="userProfileInfoPanel">
                     <ul className="userProfileInfo">
-                        <li>Followers: {userData.followers.length}</li>
-                        <li>Following: {userData.following.length}</li>
                         <li>Location: {userData.location}</li>
                         <li>Interests:</li>
                     </ul>

@@ -133,7 +133,6 @@ nav {
   font-weight: normal;
   font-size: 16px;
   color: #FFFFFF;
-  box-shadow: 0 0 2px black;
   text-decoration: none;
   padding: 6px;
   border-radius: 10px;
@@ -194,9 +193,9 @@ nav {
   background-repeat: no-repeat;
 }
 
-.loginSideDiv {
+.loginDiv {
   background-color: #992F05;
-  height: 400px;
+  height: 450px;
   width: 400px;
   position: fixed;
   left: 50%;
@@ -205,7 +204,7 @@ nav {
   box-shadow: 2px 0 25px black;
 }
 
-.loginSideContent {
+.loginContent {
   position: absolute;
   width: 75%;
   top: 50%;
@@ -215,7 +214,7 @@ nav {
 }
 
 /*noinspection CssUnusedSymbol*/
-.loginSideChildren {
+.loginChildren {
 
 }
 
@@ -337,6 +336,13 @@ nav {
   height: fit-content;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.noConversations {
+  position: fixed;
+  text-align: center;
+  color: #AAAAAA;
+  font-size: 20px;
 }
 
 .conversationTile {

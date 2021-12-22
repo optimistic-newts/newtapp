@@ -6,12 +6,12 @@ const LoginLayout = ({ children }) => {
     return(
         <>
             <main className="loginMain">
-                <div className="loginSideDiv">
-                    <div className="loginSideContent">
+                <div className="loginDiv">
+                    <div className="loginContent">
                         <h2>Welcome to Newt!</h2>
                         <Link to="/"><img src={logo} alt="Logo" className="loginLogo"/></Link>
                         <p>Please <Link to="/login" className="loginLink">Log In</Link> or <Link to="/create/user" className="loginLink">Create a new account</Link></p>
-                        <div className="loginSideChildren">
+                        <div className="loginChildren">
                             {children}
                         </div>
                     </div>

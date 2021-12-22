@@ -4,7 +4,7 @@ import CookieCheck from "../components/cookieCheck";
 import React, {useEffect, useState} from "react";
 import newtApi from "../api";
 import {useCookies} from "react-cookie";
-import ConversationList from "../components/conversation/conversationTile/conversationList";
+import ConversationList from "../components/conversation/conversationList";
 
 export default function Conversations() {
     const cookies= useCookies(["Auth"])[0];
