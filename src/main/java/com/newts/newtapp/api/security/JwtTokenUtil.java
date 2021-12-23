@@ -10,13 +10,19 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import com.newts.newtapp.api.application.datatransfer.UserProfile;
 import org.springframework.stereotype.Component;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 @Component
 public class JwtTokenUtil {
-    static final Algorithm algorithm = Algorithm.HMAC256("12345678901234567890123456789012"); // secret key is >= 256 bits
+    static final Properties properties = loadProperties();
+    static final Algorithm algorithm = Algorithm.HMAC256(properties.getProperty("jwt-secret-key")); // secret key should be >= 256 bits
     static final JWTVerifier verifier = JWT.require(algorithm).withIssuer("newts").build();
 
     /**
@@ -32,8 +38,7 @@ public class JwtTokenUtil {
             payload.put("username", user.username);
             long issuedAt = Instant.now().getEpochSecond();
             payload.put("iat", issuedAt);
-            payload.put("exp", issuedAt + 900); // 900 seconds = 15 minutes
-
+            payload.put("exp", issuedAt + Integer.parseInt(properties.getProperty("token-duration-seconds")));
             return JWT.create()
                     .withIssuer("newts")
                     .withPayload(payload)
@@ -60,6 +65,44 @@ public class JwtTokenUtil {
             return jwt.getClaim("username").asString();
         } catch (JWTDecodeException e) {
             return null;
+        }
+    }
+
+    /**
+     * Generate a new security.properties file containing some default values.
+     */
+    private static void generateProperties() {
+        String defaultProperties = "jwt-secret-key=replaceMePleaseThisIsNoSecret!\ntoken-duration-seconds=43200\n";
+        byte[] data = defaultProperties.getBytes();
+        Path path = Paths.get("./src/main/resources/security.properties");
+
+        try (OutputStream out = new BufferedOutputStream(Files.newOutputStream(path))) {
+            out.write(data, 0, data.length);
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    /**
+     * Return Properties object containing the security properties. If the properties file does not exist,
+     * generate a new one with default values.
+     */
+    private static Properties loadProperties() {
+        Path path = Paths.get("./src/main/resources/security.properties");
+        File file = new File(path.toUri());
+        Properties properties = new Properties();
+
+        try (FileInputStream in = new FileInputStream(file)) {
+            properties.load(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (properties.isEmpty()) {
+            generateProperties();
+            return loadProperties();
+        } else {
+            return properties;
         }
     }
 }
