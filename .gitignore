@@ -91,3 +91,6 @@ fabric.properties
 
 # build results
 target/
+
+# security config file - to be generated and maintained locally
+security.properties
