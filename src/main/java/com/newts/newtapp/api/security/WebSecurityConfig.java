@@ -39,6 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // Permit all of these requests and require authentication for all others.
                 .antMatchers(HttpMethod.GET, "/api/docs").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/health").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/users").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/users/*").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/users/id/*").permitAll()
