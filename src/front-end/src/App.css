@@ -377,7 +377,10 @@ nav {
   flex-direction: row;
   justify-content: flex-start;
   align-items: baseline;
-  width: 60%;
+  width: 80%;
+  border: 1px solid green;
+  overflow: hidden;
+  height: 18px;
 }
 
 .conversationTileTopic {
@@ -385,6 +388,8 @@ nav {
   background-color: #992F05;
   border-radius: 5px;
   padding: 0 5px;
+  text-wrap: none;
+  flex: none;
 }
 
 .conversationTileSidebar {
