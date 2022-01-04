@@ -15,7 +15,7 @@ export default function Header() {
             <span className="leftNavLinks">
             <Link to="/browse" className="navLink">Browse</Link>
             <Link to="/friends" className="navLink">Friends</Link>
-            <Link to="/conversations" className="navLink">Conversations</Link>
+            <Link to="/conversations" className="navLink">My Conversations</Link>
             </span>
             <Link to="/"><img src={logo} alt="Logo" className="navLogo"/></Link>
             <span className="rightNavLinks">
