@@ -338,13 +338,6 @@ nav {
   transform: translateX(-50%);
 }
 
-.noConversations {
-  position: fixed;
-  text-align: center;
-  color: #AAAAAA;
-  font-size: 20px;
-}
-
 .conversationTile {
   position: relative;
   background-color: #303030;
