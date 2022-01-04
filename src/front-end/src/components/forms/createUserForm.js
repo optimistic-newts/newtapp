@@ -55,7 +55,7 @@ class CreateUserForm extends React.Component {
                     <input name="confirmedPassword" type="password" minLength="6" required="required"
                            placeholder="Confirm Password" value={this.state.confirmedPassword}
                            onChange={this.handleChange} className="newtTextInput"/> <br/>
-                    <input name="interests" type="text" required="required" placeholder="Something you're interested in"
+                    <input name="interests" type="text" required="required" placeholder="Interests"
                            value={this.state.interests} onChange={this.handleChange} className="newtTextInput"/> <br/>
                     <input type="submit" value="Create Account" className="newtButtonDark"/>
                     <FormWarning warning={this.state.warning} />
