@@ -378,7 +378,6 @@ nav {
   justify-content: flex-start;
   align-items: baseline;
   width: 80%;
-  border: 1px solid green;
   overflow: hidden;
   height: 18px;
 }
