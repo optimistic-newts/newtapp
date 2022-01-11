@@ -1,6 +1,6 @@
 # Newt
 
-An app for meeting people and having conversations.
+An app for meeting people and having conversations. Check out the [deployed app](https://newt.social)!
 
 In Newt, logged-in users are able to create and join Conversations. Conversations are the main content of the app and are defined by a prompt and some relevant topic tags. Within a conversation, users who have joined can discuss the prompt in a group-chat like format. Users can find new Conversations to join by scrolling through their feeds, the Browse feed shows them Conversations that they may be interested in (based on the user's interests) and the Friends feed shows them Conversations that the users they follow are currently a part of.
 
